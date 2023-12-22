@@ -1,0 +1,1 @@
+This folder is for the sole use of the CSC 355 Data Structure and Algorithms class in java
