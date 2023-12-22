@@ -1,0 +1,1 @@
+gcc main.c cardFunction.c -o main

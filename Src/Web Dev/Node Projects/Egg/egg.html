@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="egg.css">
+    <script src="egg.js"></script>
+</head>
+<body>
+    <div class="deck">
+        <h1>A Deck of Cards</h1>
+        <!-- <button id="Shuffle" onclick="load()">Shuffle</button> -->
+        <label for="players">How many players:</label>
+        <select name="players" id="players" required>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <button id="Play" onclick="load()">Play</button>
+        
+        <!--This is where the deck goes-->
+        <div id="deck"></div>
+    </div>
+</body>
+</html>
