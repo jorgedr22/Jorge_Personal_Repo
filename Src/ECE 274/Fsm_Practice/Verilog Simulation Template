@@ -1,0 +1,30 @@
+VERILOG SIMIULATION TEMPLATE
+
+file_name is the name of the verilog code
+file_name_tb is the testbench 
+file_name_tb.vcd is the SIMIULATION
+
+`include "file_name.v"
+
+$dumpfile("file_name_tb.vcd");
+$dumpvars(0,file_name_tb);
+
+
+To compile:
+iverilog -o file_name_tb.vvp file_name_tb.v
+
+To run:
+vvp file_name_tb.vvp
+
+View the timing diagram using GTKWAVE:
+
+1.open -a gtkwave
+
+2.File -> New Tab
+
+3.Select the .vcd file which is created when we ran the testbench code.
+
+4.Select all the wires whose signals you want to analyse graphically 
+  and then click on append
+
+https://saiankit.medium.com/how-to-simulate-verilog-models-on-macos-5a6f821b2c4f
