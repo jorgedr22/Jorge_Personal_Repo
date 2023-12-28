@@ -1,2 +1,3 @@
-This folder is mainly used to experiment with various coding languages and get a grasp for everything software related. 
-In here, you'll find multiple branches labeled by language and the sort of projects and ideas that I have worked on in my spare time.
+This folder is the labs and projects executed in ECE 372 Microprocessor Organization
+
+Here is my [Final Project Presentation](https://docs.google.com/presentation/d/1idyCcuS8gnIxTRQtIPdH3IaBFk36tFC198AD5mNk9qc/edit?usp=sharing)
