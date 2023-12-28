@@ -1,0 +1,1 @@
+These are the types of Algorithms and their implementation in java projects
