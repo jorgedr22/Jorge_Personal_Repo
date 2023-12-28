@@ -18,3 +18,4 @@ Then use ./gradlew run
 Windows:
 Then use ./gradlew.bat run
 
+[Project Acceptance Review Presentation](https://docs.google.com/presentation/d/15fFAK8N3N_7ql6OWaN2JnY0xaAc6NiPt63_gOrTumk4/edit?usp=sharing)
