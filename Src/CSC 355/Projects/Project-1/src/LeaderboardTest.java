@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -6,10 +7,9 @@ import java.util.Scanner;
 
 public class LeaderboardTest {
     public static void main(String[] args) {
-        // Adjust the file path accordingly
-        String filePath = "/Users/jorgedelriocuriel/Desktop/Project-1/src/names.txt";
-        //String filePath = "/Users/jorgedelriocuriel/Desktop/Project-1/src/temp.txt";
-
+       
+        File list = new File("/Users/jorgedelriocuriel/Desktop/Jorge_Personal_Repo/Src/CSC 355/Projects/Project-1/src/names.txt");
+        
         // Ask for the size of the leaderboard
         Scanner LeaderboardSize = new Scanner(System.in);
         System.out.println("Enter the size of the final leaderboard to be tested:");
@@ -20,7 +20,7 @@ public class LeaderboardTest {
         // Initialize the leaderboard with size M
         Leaderboard leaderboard = new Leaderboard(size);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(list))) {
             String line;
             while ((line = br.readLine()) != null) {
                 // Assuming each line in the file contains name and score separated by a comma
