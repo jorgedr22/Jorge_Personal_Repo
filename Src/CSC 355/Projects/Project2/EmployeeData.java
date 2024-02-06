@@ -1,4 +1,3 @@
-
 public class EmployeeData implements Comparable<EmployeeData> {
    private String firstName; // First Name
    private String lastName;  // Last Name
@@ -28,7 +27,7 @@ public class EmployeeData implements Comparable<EmployeeData> {
    @Override
    public String toString() {
       return lastName + " " + firstName + 
-             "       \tID: " + emplID + 
+             "\t\tID: " + emplID + 
              "\t\tDept. #: " + deptNum;
    }
 }

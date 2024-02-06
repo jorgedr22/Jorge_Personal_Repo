@@ -2,11 +2,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class EmployeeRecords {
+public class EmployeeRecords  {
 
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
-      ArrayList<EmployeeData> emplList = new ArrayList<EmployeeData>(); // Stores all employee data                                           // Stores info for one employee
+      ArrayList<EmployeeData> emplList = new ArrayList<EmployeeData>(); // Stores all employee data                                           
+      EmployeeData emplData;                                            // Stores a employee's data 
       String userCommand;                                               // User defined add/print/quit command
       String emplFirstName;                                             // User defined employee first name
       String emplLastName;                                              // User defined employee last name
@@ -29,7 +30,7 @@ public class EmployeeRecords {
             emplID = scnr.nextInt();
             System.out.println("Department Number: ");
             deptNum = scnr.nextInt();
-            EmployeeData emplData = new EmployeeData(emplFirstName, emplLastName, emplID, deptNum);
+            emplData = new EmployeeData(emplFirstName, emplLastName, emplID, deptNum);
             emplList.add(emplData);
          }
          // Print all entries
