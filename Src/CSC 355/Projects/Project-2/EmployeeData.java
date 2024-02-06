@@ -14,7 +14,15 @@ public class EmployeeData implements Comparable<EmployeeData> {
 
    @Override
    public int compareTo(EmployeeData otherEmpl) {
-     //enter your code here
+      // Compare based on department number first
+      int comparisonVal = this.deptNum.compareTo(otherEmpl.deptNum);
+
+      // If in the same department, compare based on employee ID
+      if (comparisonVal == 0) {
+         return this.emplID.compareTo(otherEmpl.emplID);
+         }
+
+         return comparisonVal;
    }
 
    @Override
