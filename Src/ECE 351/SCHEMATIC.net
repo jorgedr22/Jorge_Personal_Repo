@@ -1,0 +1,19 @@
+* source LAB2_COMMONMODE
+V_V1         VIN 0  AC 1
++SIN 0 1 1k 0 0 0
+R_R1         VIN N00260  3.3k TC=0,0 
+R_R2         VIN N00264  3.3k TC=0,0 
+R_R3         0 N00264  46.7k TC=0,0 
+R_R4         VOUT N00260  46.7k TC=0,0 
+X_U1         N00264 N00260 PLUS15 MINUS15 VOUT TL071/301/TI
+V_V2         PLUS15 0 15Vdc
+V_V3         0 MINUS15 15Vdc
+C_C1         VIN N02459  2.2uF  TC=0,0 
+C_C2         N02212 VOUT  220pF  TC=0,0 
+R_R5         N02212 VOUT  46.6k TC=0,0 
+R_R6         N02459 N02212  3.3k TC=0,0 
+X_U2         0 N02212 15PLUS 15MINUS VOUT TL071/301/TI
+V_Voltage         Source VIN 0  AC 15
++SIN 0 15 1k 0 0 0
+V_V4         15PLUS 0 25Vdc
+V_V5         0 15MINUS 25Vdc
