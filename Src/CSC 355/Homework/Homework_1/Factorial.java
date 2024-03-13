@@ -1,4 +1,4 @@
-package Homework;
+package Homework.Homework_1;
 import java.util.Scanner;
 
 public class Factorial {
