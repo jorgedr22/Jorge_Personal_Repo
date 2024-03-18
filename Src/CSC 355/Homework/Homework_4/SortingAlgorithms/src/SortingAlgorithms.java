@@ -27,9 +27,9 @@ public class SortingAlgorithms{
     public static void insertionSort(int[] arr){
         int n = arr.length;
         for (int i = 1; i < n; ++i) {
+            int[] temp = arr.clone();
             int key = arr[i];
             int j = i - 1;
-
             // Move elements of arr[0..i-1], that are greater than key,
             // to one position ahead of their current position
             while (j >= 0 && arr[j] > key) {
@@ -37,8 +37,10 @@ public class SortingAlgorithms{
                 j = j - 1;
             }
             arr[j + 1] = key;
-
-            printArray(arr);
+            
+            if(!arr.equals(temp)){
+                printArray(arr);
+            }
         }
     }
 
@@ -53,11 +55,11 @@ public class SortingAlgorithms{
                     int temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
+                    // Print the array after each pass
+                    printArray(arr);
                 }
             }
             
-            // Print the array after each pass
-            printArray(arr);
         }
     }
 
@@ -131,15 +133,15 @@ public class SortingAlgorithms{
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 0, 4, 1, 5, 2, 9, 7, 8, 6};
         Scanner scnr = new Scanner(System.in);
-        System.out.println("Original array:");
-        printArray(arr);
         
         String choice = "";
         boolean exit = false;
         
         while (!exit) {
+            int[] arr = {3, 0, 4, 1, 5, 2, 9, 7, 8, 6};
+            System.out.println("Original array:");
+            printArray(arr);
             System.out.println("Select a sorting method or (Q) to quit.");
             System.out.println("Selection Sort(S) | Insertion Sort(I) | Bubble Sort(B) | Merge Sort(M)");
            
@@ -171,7 +173,7 @@ public class SortingAlgorithms{
     }
 
     public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; ++i) {
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
