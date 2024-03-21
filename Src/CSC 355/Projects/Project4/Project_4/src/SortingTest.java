@@ -84,7 +84,7 @@ public class SortingTest {
     }
     private static int[] readArrayFromFile(String filename) {
         List<Integer> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/" + filename))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/TestFiles/" + filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] numbers = line.split("\\s+");
@@ -107,7 +107,7 @@ public class SortingTest {
     }
     private static int[][] readGridFromFile(String gridpath) {
         int[][] grid = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/" + gridpath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/TestFiles/" + gridpath))) {
             String line = br.readLine();
             if (line != null) {
                 int size = Integer.parseInt(line.trim()); // size of square grid
