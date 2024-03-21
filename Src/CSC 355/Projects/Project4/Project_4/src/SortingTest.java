@@ -57,6 +57,15 @@ public class SortingTest {
                                 System.out.println();
                             }
                         }
+                        System.out.println("--------------------------------");
+                        Grid = SortGrid.Sort(Grid);
+                        // Print the sorted grid
+                        for (int[] row : Grid) {
+                            for (int num : row) {
+                                System.out.print(num + " ");
+                            }
+                            System.out.println();
+                        }
                     }
                     System.out.println("What are you going to be testing?");
                     System.out.println("For Array testing [1] | For Grid testing [2] | For Quiting [3]");
@@ -98,7 +107,7 @@ public class SortingTest {
     }
     private static int[][] readGridFromFile(String gridpath) {
         int[][] grid = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src" + gridpath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/" + gridpath))) {
             String line = br.readLine();
             if (line != null) {
                 int size = Integer.parseInt(line.trim()); // size of square grid
