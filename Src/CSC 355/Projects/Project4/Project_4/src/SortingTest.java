@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SortingTest {
-    static String path = "/Users/jorgedelriocuriel/Desktop/Jorge_Personal_Repo/Src/CSC 355/Projects/Project4/Project_4/src/";
+    static String userDirectory = System.getProperty("user.dir"); // opens the correct directory
     public static void main(String[] args) {
-        String[] files = {"array1.txt", "array2.txt", "array3.txt", "array4.txt", "array5.txt"};
-        String[] grid_files = {"testGrid1.txt","testGrid2.txt","testGrid3.txt","testGrid4.txt","testGrid5.txt"};
+        String[] files = {"array1.txt", "array2.txt", "array3.txt", "array4.txt", "array5.txt"}; // name of array files
+        String[] grid_files = {"testGrid1.txt","testGrid2.txt","testGrid3.txt","testGrid4.txt","testGrid5.txt"}; // name of grid files
         Scanner scnr = new Scanner(System.in);
         boolean quit = false;
 
@@ -75,7 +75,7 @@ public class SortingTest {
     }
     private static int[] readArrayFromFile(String filename) {
         List<Integer> list = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(path +filename))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src/" + filename))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] numbers = line.split("\\s+");
@@ -98,10 +98,10 @@ public class SortingTest {
     }
     private static int[][] readGridFromFile(String gridpath) {
         int[][] grid = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(path + gridpath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(userDirectory + "/src" + gridpath))) {
             String line = br.readLine();
             if (line != null) {
-                int size = Integer.parseInt(line.trim());
+                int size = Integer.parseInt(line.trim()); // size of square grid
                 grid = new int[size][size];
 
                 for (int i = 0; i < size; i++) {
@@ -121,6 +121,6 @@ public class SortingTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return grid;
+        return grid; // returns square grid grid
     }
     }
