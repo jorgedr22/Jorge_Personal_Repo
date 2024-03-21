@@ -13,14 +13,14 @@ public class SortingTest {
         String[] files = {"array1.txt", "array2.txt", "array3.txt", "array4.txt", "array5.txt"}; // name of array files
         String[] grid_files = {"testGrid1.txt","testGrid2.txt","testGrid3.txt","testGrid4.txt","testGrid5.txt"}; // name of grid files
         Scanner scnr = new Scanner(System.in);
-        boolean quit = false;
+        boolean quit = false; // initilzed to always run 
 
         System.out.println("What are you going to be testing?");
         System.out.println("For Array testing [1] | For Grid testing [2] | For Quiting [3]");
-        int testing = scnr.nextInt();
+        int sorting = scnr.nextInt(); // determines the sorting type
 
-        while (!quit) {
-            switch (testing) {
+        while (!quit) { // runs program until user quits
+            switch (sorting) {
                 case 1:
                     for (String file : files) {
                         System.out.println("Sorting " + file + ": --------------------------------");
@@ -42,7 +42,7 @@ public class SortingTest {
                     }
                     System.out.println("What are you going to be testing?");
                     System.out.println("For Array testing [1] | For Grid testing [2] | For Quiting [3]");
-                    testing = scnr.nextInt();
+                    sorting = scnr.nextInt();
                     break;
                 case 2:
                     for (String grid : grid_files) {
@@ -69,11 +69,11 @@ public class SortingTest {
                     }
                     System.out.println("What are you going to be testing?");
                     System.out.println("For Array testing [1] | For Grid testing [2] | For Quiting [3]");
-                    testing = scnr.nextInt();
+                    sorting = scnr.nextInt();
                     break;
                 case 3:
                     System.out.println("Thank you for testing");
-                    quit = true;
+                    quit = true; // exits program
                     break;
                 default:
                     break;
