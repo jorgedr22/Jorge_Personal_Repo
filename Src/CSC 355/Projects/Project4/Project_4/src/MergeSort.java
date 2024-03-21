@@ -1,9 +1,10 @@
 // ArraySort.java
 public class MergeSort {
-    static int passes;
-    public static void mergeSort(int[] arr) {
+    static int passes = 0;
+    public static int[] mergeSort(int[] arr) {
         passes = 0; // Reset passes count
         mergeSort(arr, 0, arr.length - 1);
+        return arr;
     }
 
     private static void mergeSort(int[] arr, int l, int r) {
@@ -52,5 +53,9 @@ public class MergeSort {
             j++;
             k++;
         }
+    }
+
+    public static int NumberOfPasses(){
+        return passes;
     }
 }

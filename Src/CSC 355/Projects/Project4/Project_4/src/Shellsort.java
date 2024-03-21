@@ -1,7 +1,7 @@
 // Shellsort.java
 public class Shellsort {
     static int passes = 0;
-    public static void sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         int n = arr.length;
         // Start with a big gap, then reduce the gap
         for (int gap = n / 2; gap > 0; gap /= 2) {
@@ -24,5 +24,9 @@ public class Shellsort {
                 arr[j] = temp;
             }
         }
+    return arr;
+    }
+    public static int NumberOfPasses(){
+        return passes;
     }
 }

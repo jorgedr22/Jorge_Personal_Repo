@@ -29,14 +29,14 @@ public class SortingTest {
                         System.out.println("Original Array: " + Arrays.toString(array1));
             
                         System.out.println("Sorted using Shell Sort: --------------------------------");
-                        Shellsort.sort(array1);
+                        array1 = Shellsort.sort(array1);
                         System.out.println(Arrays.toString(array1));
-                        System.out.println("Number of passes (Shellsort): " + Shellsort.passes + " --------------------------------");
+                        System.out.println("Number of passes (Shellsort): " + Shellsort.NumberOfPasses() + " --------------------------------");
             
                         System.out.println("Sorted using Merge Sort: --------------------------------");
-                        MergeSort.mergeSort(array2);
+                        array2 = MergeSort.mergeSort(array2);
                         System.out.println(Arrays.toString(array2));
-                        System.out.println("Number of passes (Merge Sort): " + MergeSort.passes+" --------------------------------");
+                        System.out.println("Number of passes (Merge Sort): " + MergeSort.NumberOfPasses() +" --------------------------------");
                         System.out.println();
 
                     }
