@@ -1,0 +1,10 @@
+Advantages of Search Trees: Search trees offer efficient search 
+operations with logarithmic time complexity, maintain elements in 
+sorted order, facilitating range queries and ordered traversal, 
+and support dynamic operations such as insertion, deletion, and 
+modification of elements.
+
+Disadvantages of Search Trees: Unbalanced trees can lead to 
+degraded performance, requiring costly rebalancing operations, 
+and they typically require additional memory overhead to maintain 
+their structure and pointers.

@@ -1,0 +1,6 @@
+Answer: D
+
+In a successful linear search, the item being searched for can be found at any position in 
+the list with equal probability. Considering this, on average, we would need to search half 
+of the list to find the desired item. Since there are n elements in the list and the search 
+is successful, the average number of comparisons would indeed be (n+1)/2 . 

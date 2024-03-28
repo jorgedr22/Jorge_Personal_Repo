@@ -1,0 +1,6 @@
+Answer: D
+
+This is indeed a significant advantage of Linear Search. Unlike Binary Search, which demands 
+a sorted array, Linear Search can be applied to both sorted and unsorted arrays, making it more 
+versatile in various situations. This flexibility is advantageous in scenarios where sorting 
+the array beforehand is not feasible or efficient.

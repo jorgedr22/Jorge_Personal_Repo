@@ -1,0 +1,5 @@
+Answer: A
+
+Time complexity of Binary Search is O(log n), 
+where n is the number of elements in the array. 
+It divides the array in half at each step.

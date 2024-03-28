@@ -1,0 +1,5 @@
+Advantages of Hashtables include fast retrieval of elements due to constant-time lookup, 
+efficient insertion and deletion operations when properly implemented, and the flexibility of 
+ey-value mapping for various applications. However, they are sensitive to collision resolution 
+overhead, potentially consuming more memory than other data structures, and their performance
+ heavily relies on the quality of the hash function chosen, which can affect efficiency.
