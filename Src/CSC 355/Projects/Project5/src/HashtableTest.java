@@ -17,6 +17,7 @@ public class HashtableTest {
     private static Pair[] arr3 = new Pair[]{null, null, new Pair("Davidson", "Minnie Davidson"), null, new Pair("Carson", "Elizabeth Carson"), new Pair("Ellis", "Margaret Ellis"), null, null, new Pair("Ingles", "Sarah Ingles"), null, null, new Pair("Harris", "Bertha Harris"), null, new Pair("Adams", "Anna Adams"), new Pair("George", "Alice George"), new Pair("Frank", "Ida Frank"), new Pair("Smith", "Mary Smith"), null, null, null, new Pair("Jackson", "Annie Jackson"), null, new Pair("Bates", "Emma Bates")};
     private static Pair[] arr4 = new Pair[]{null, null, null, null, new Pair("Jackson", "Annie Jackson"), null, null, null, new Pair("Ingles", "Sarah Ingles"), null, null};
     private static int n = 25;
+	//private static int number_of_keys; // for testing 
     
     public static void main(String[] args) {
 	setup();
@@ -237,20 +238,30 @@ public class HashtableTest {
 	map = new HashMap<String, Integer>();
 	nameList = new ArrayList<String>();
 	values = new ArrayList<String>();
+	//number_of_keys = 0; // used for testing
+
 	BufferedReader br;
 		try {
 			br = new BufferedReader(new FileReader("example.txt"));
 			String line = br.readLine();
-			while(line != null) {
-			String[] split = line.split(",");
-			nameList.add(split[0]);
-			values.add(split[1]);
-			line = br.readLine();
-		}
+			while(line != null) 
+			{
+				//number_of_keys=number_of_keys+1; // used for testing 
+				String[] split = line.split(",");
+				nameList.add(split[0]);
+				values.add(split[1]);
+				line = br.readLine();
+			}
+			// Uncomment the below for testing key and values
+			// int i = 0;
+			// while (number_of_keys>0) {
+			// 	System.out.println("Key:" + nameList.get(i) + " Value: " + values.get(i));
+			// 	i=i+1;
+			// 	number_of_keys--;
+			// }
 	} catch (Exception e) {
 		e.printStackTrace();
 	}	
-	System.out.println(nameList);
-	System.out.println(values);
+	
     }
 }
