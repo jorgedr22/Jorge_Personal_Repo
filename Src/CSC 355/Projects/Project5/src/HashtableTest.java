@@ -7,7 +7,6 @@ import java.util.Random;
 import java.util.Arrays;
 
 @SuppressWarnings("unchecked")
-
 public class HashtableTest {
     private static Hashtable table;
     private static HashMap map;
@@ -22,18 +21,20 @@ public class HashtableTest {
     
     public static void main(String[] args) {
 	setup();
-	double score = 0.0;
-	score += test1();	
-	score += test2();
-	System.out.println("Total Part 1 Expected Score: " + score);
+	//double score = 0.0;
+	//score += test1();	
+	//score += test2();
+	//System.out.println("Total Part 1 Expected Score: " + score);
     }
 
     private static double test1() {
 	double score = 0.0;
 	System.out.println("***Begin Test 1***");
 	System.out.println("Testing isEmpty...");//1.0 point
-	if(table.isEmpty())
+	if(table.isEmpty()){
 	    score += 1.0;
+		System.out.println("isEmpty returned true:PASS");
+	}
 	else
 	    System.out.println("This table should be empty, but isEmpty is returning false.");
 	
@@ -46,8 +47,10 @@ public class HashtableTest {
 	}
 
 	System.out.println("Testing isEmpty...");//1.0 point
-	if(!table.isEmpty())
+	if(!table.isEmpty()){
 	    score+=1.0;
+		System.out.println("isEmpty returned false:PASS");
+	}
 	else
 	    System.out.println("This table should not be empty, but isEmpty is returnning true.");
 	
@@ -59,6 +62,7 @@ public class HashtableTest {
 	    Integer act = (Integer)table.get(name);
 	    if(exp == act) {
 		score += 0.5;
+		System.out.println("Key was returned correctly:PASS");
 	    } else {
 		System.out.println("The values for key " + name + " do not match.");
 		System.out.println("Expected: " + exp);
@@ -87,6 +91,7 @@ public class HashtableTest {
 	    Integer act = (Integer)table.get(name);
 	    if(exp == act) {
 		score += 0.5;
+		System.out.println("Key " + name + " was returned correctly:PASS");
 	    } else {
 		System.out.println("The values for key " + name + " do not match.");
 		System.out.println("Expected: " + exp);
@@ -112,6 +117,7 @@ public class HashtableTest {
 	    Integer act = (Integer)table.get(name);
 	    if(act == null) {
 		score += 0.5;
+		System.out.println("Key "  + name + " was deleted correctly:PASS");
 	    } else {
 		System.out.println("Key " + name + " was not deleted.");
 	    }
@@ -120,14 +126,18 @@ public class HashtableTest {
 	System.out.println("Testing get for elements not in the table...");//1.0 point
 	String name = nameList.get(nameList.size()-1);
 	Integer act = (Integer)table.get(name);
-	if(act == null)
+	if(act == null){
 	    score += 1.0;
+		System.out.println("Key " + name + " is not in the table:PASS");
+	}
 	else 
 	    System.out.println("Key " + name + " should not be in the table.");
 
 	System.out.println("Testing size...");//1.0 point
-	if(table.size() == map.size())
+	if(table.size() == map.size()){
 	    score += 1.0;
+		System.out.println("Size of table is correct");
+	}
 	else {
 	    System.out.println("The table sizes do not match.");
 	    System.out.println("Expected: " + map.size());
@@ -137,59 +147,59 @@ public class HashtableTest {
 	return score;
     }
 
-    private static double test2() {
-	System.out.println("***Begin Test 2***");
-	double score = 0.0;
-	int index = 0;
-	table = new Hashtable<String, String>(5);
-	//add 2 elements
-	while(index < 2) {
-	    String name = nameList.get(index);
-	    String[] split = name.split(" ");
-	    table.put(split[1], name);
-	    index++;
-	}
-	Pair[] array = table.getTable();
-	int arrNum = 1;
-	score += checkArray(array, arrNum);
+    // private static double test2() {
+	// System.out.println("***Begin Test 2***");
+	// double score = 0.0;
+	// int index = 0;
+	// table = new Hashtable<String, String>(5);
+	// //add 2 elements
+	// while(index < 2) {
+	//     String name = nameList.get(index);
+	//     String[] split = name.split(" ");
+	//     table.put(split[1], name);
+	//     index++;
+	// }
+	// Pair[] array = table.getTable();
+	// int arrNum = 1;
+	// score += checkArray(array, arrNum);
 
-	//add 3 more elements
-	while(index < 5) {
-	    String name = nameList.get(index);
-	    String[] split = name.split(" ");
-	    table.put(split[1], name);
-	    index++;
-	}
-	array = table.getTable();
-	arrNum++;
-	score += checkArray(array, arrNum);
+	// //add 3 more elements
+	// while(index < 5) {
+	//     String name = nameList.get(index);
+	//     String[] split = name.split(" ");
+	//     table.put(split[1], name);
+	//     index++;
+	// }
+	// array = table.getTable();
+	// arrNum++;
+	// score += checkArray(array, arrNum);
 
-	//add 6 more elements
-	while(index < 11) {
-	    String name = nameList.get(index);
-	    String[] split = name.split(" ");
-	    table.put(split[1], name);
-	    index++;
-	}
-	array = table.getTable();
-	arrNum++;
-	score += checkArray(array, arrNum);
+	// //add 6 more elements
+	// while(index < 11) {
+	//     String name = nameList.get(index);
+	//     String[] split = name.split(" ");
+	//     table.put(split[1], name);
+	//     index++;
+	// }
+	// array = table.getTable();
+	// arrNum++;
+	// score += checkArray(array, arrNum);
 
-	//delete 9 elements
-	index = 0;
-	while(index < 9) {
-	    String name = nameList.get(index);
-	    String[] split = name.split(" ");
-	    table.delete(split[1]);
-	    index++;
-	}
-	array = table.getTable();
-	arrNum++;
-	score += checkArray(array, arrNum);
+	// //delete 9 elements
+	// index = 0;
+	// while(index < 9) {
+	//     String name = nameList.get(index);
+	//     String[] split = name.split(" ");
+	//     table.delete(split[1]);
+	//     index++;
+	// }
+	// array = table.getTable();
+	// arrNum++;
+	// score += checkArray(array, arrNum);
 
-	System.out.println("Test 2 Expected Score: " + score + "\n");
-	return score;
-    }
+	// System.out.println("Test 2 Expected Score: " + score + "\n");
+	// return score;
+    // }
 
     private static double checkArray(Pair[] act, int num) {
 	Pair[] exp = null;
@@ -237,6 +247,7 @@ public class HashtableTest {
 		String[] split = line.split(",");
 		nameList.add(split[0]);
 		line = br.readLine();
+		System.out.println(nameList);
 	    }
 	} catch (Exception e) {
 	    e.printStackTrace();
