@@ -93,14 +93,14 @@ public class Hashtable<K, V> {
 
         while (table[index] != null) {
             if (table[index].getKey().equals(key) && !table[index].isDeleted())
-                return index;
+            return index;
             probe++;
             index = (hash + probe) % table.length;
         }
-
+        
         return -1;
     }
-
+    
     @SuppressWarnings("unchecked")
     private void resize(int newSize) {
         Pair<K, V>[] oldTable = table;

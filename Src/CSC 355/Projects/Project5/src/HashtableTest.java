@@ -11,8 +11,7 @@ public class HashtableTest {
     private static Hashtable table;
     private static HashMap map;
     private static ArrayList<String> nameList;
-    private static ArrayList<String> inTable;
-    private static Random gen;
+	private static ArrayList<String> values;
     private static Pair[] arr1 = new Pair[]{null, new Pair("Adams", "Anna Adams"), new Pair("Smith", "Mary Smith"), null, null};
     private static Pair[] arr2 = new Pair[]{new Pair("Smith", "Mary Smith"), null, null, null, null, null, null, new Pair("Davidson", "Minnie Davidson"), new Pair("Bates", "Emma Bates"), new Pair("Adams", "Anna Adams"), new Pair("Carson", "Elizabeth Carson")};
     private static Pair[] arr3 = new Pair[]{null, null, new Pair("Davidson", "Minnie Davidson"), null, new Pair("Carson", "Elizabeth Carson"), new Pair("Ellis", "Margaret Ellis"), null, null, new Pair("Ingles", "Sarah Ingles"), null, null, new Pair("Harris", "Bertha Harris"), null, new Pair("Adams", "Anna Adams"), new Pair("George", "Alice George"), new Pair("Frank", "Ida Frank"), new Pair("Smith", "Mary Smith"), null, null, null, new Pair("Jackson", "Annie Jackson"), null, new Pair("Bates", "Emma Bates")};
@@ -21,10 +20,10 @@ public class HashtableTest {
     
     public static void main(String[] args) {
 	setup();
-	//double score = 0.0;
-	//score += test1();	
+	double score = 0.0;
+	score += test1();	
 	//score += test2();
-	//System.out.println("Total Part 1 Expected Score: " + score);
+	System.out.println("Total Part 1 Expected Score: " + score);
     }
 
     private static double test1() {
@@ -33,14 +32,14 @@ public class HashtableTest {
 	System.out.println("Testing isEmpty...");//1.0 point
 	if(table.isEmpty()){
 	    score += 1.0;
-		System.out.println("isEmpty returned true:PASS");
+		//System.out.println("isEmpty returned true:PASS");
 	}
 	else
 	    System.out.println("This table should be empty, but isEmpty is returning false.");
 	
 	System.out.println("Putting some items into the table...");
 	for(int i = 0; i < n; i++) {
-	    int num = gen.nextInt(100);
+	    String num = values.get(i);
 	    String name = nameList.get(i);
 	    table.put(name, num);
 	    map.put(name, num);
@@ -49,20 +48,20 @@ public class HashtableTest {
 	System.out.println("Testing isEmpty...");//1.0 point
 	if(!table.isEmpty()){
 	    score+=1.0;
-		System.out.println("isEmpty returned false:PASS");
+		//System.out.println("isEmpty returned false:PASS");
 	}
 	else
 	    System.out.println("This table should not be empty, but isEmpty is returnning true.");
 	
 	System.out.println("Testing get...");//4.0 points
-	int i = gen.nextInt(n);
+	int i = 0;
 	for(int j = 1; j <= 8; j++) {
 	    String name = nameList.get(i);
-	    Integer exp = (Integer)map.get(name);
-	    Integer act = (Integer)table.get(name);
+	    String exp = (String)map.get(name);
+	    String act = (String)table.get(name);
 	    if(exp == act) {
 		score += 0.5;
-		System.out.println("Key was returned correctly:PASS");
+		//System.out.println("Key was returned correctly:PASS");
 	    } else {
 		System.out.println("The values for key " + name + " do not match.");
 		System.out.println("Expected: " + exp);
@@ -73,7 +72,7 @@ public class HashtableTest {
 
 	System.out.println("Testing update...");//4.0 points
 	ArrayList<String> temp = new ArrayList<String>();
-	i = gen.nextInt(n);
+	i = 0;
 	for(int j = 1; j <= 8; j++) {
 	    String name = nameList.get(i);
 	    temp.add(name);
@@ -81,17 +80,17 @@ public class HashtableTest {
 	}
 	for(int j = 0; j < temp.size(); j++) {
 	    String name = temp.get(j);
-	    int num = 101+j;
+	    String num = values.get(i);
 	    map.put(name, num);
 	    table.put(name, num);
 	}
 	for(int j = 0; j < temp.size(); j++) {
 	    String name = temp.get(j);
-	    Integer exp = (Integer)map.get(name);
-	    Integer act = (Integer)table.get(name);
+		String exp = (String)map.get(name);
+		String act = (String)table.get(name);
 	    if(exp == act) {
 		score += 0.5;
-		System.out.println("Key " + name + " was returned correctly:PASS");
+		//System.out.println("Key " + name + " was returned correctly:PASS");
 	    } else {
 		System.out.println("The values for key " + name + " do not match.");
 		System.out.println("Expected: " + exp);
@@ -101,7 +100,7 @@ public class HashtableTest {
 
 	System.out.println("Testing delete...");//4.0 points
 	temp = new ArrayList<String>();
-	i = gen.nextInt(n);
+	i = 0;
 	for(int j = 1; j <= 8; j++) {
 	    String name = nameList.get(i);
 	    temp.add(name);
@@ -117,7 +116,7 @@ public class HashtableTest {
 	    Integer act = (Integer)table.get(name);
 	    if(act == null) {
 		score += 0.5;
-		System.out.println("Key "  + name + " was deleted correctly:PASS");
+		//System.out.println("Key "  + name + " was deleted correctly:PASS");
 	    } else {
 		System.out.println("Key " + name + " was not deleted.");
 	    }
@@ -128,7 +127,7 @@ public class HashtableTest {
 	Integer act = (Integer)table.get(name);
 	if(act == null){
 	    score += 1.0;
-		System.out.println("Key " + name + " is not in the table:PASS");
+		//System.out.println("Key " + name + " is not in the table:PASS");
 	}
 	else 
 	    System.out.println("Key " + name + " should not be in the table.");
@@ -136,7 +135,7 @@ public class HashtableTest {
 	System.out.println("Testing size...");//1.0 point
 	if(table.size() == map.size()){
 	    score += 1.0;
-		System.out.println("Size of table is correct");
+		//System.out.println("Size of table is correct");
 	}
 	else {
 	    System.out.println("The table sizes do not match.");
@@ -234,24 +233,24 @@ public class HashtableTest {
     }
        
     private static void setup() {
-	gen = new Random(System.currentTimeMillis());
 	table = new Hashtable<String, Integer>();
 	map = new HashMap<String, Integer>();
 	nameList = new ArrayList<String>();
-	inTable = new ArrayList<String>();
+	values = new ArrayList<String>();
 	BufferedReader br;
-	try {
-	    br = new BufferedReader(new FileReader("names.txt"));
-	    String line = br.readLine();
-	    while(line != null) {
-		String[] split = line.split(",");
-		nameList.add(split[0]);
-		line = br.readLine();
-		System.out.println(nameList);
-	    }
+		try {
+			br = new BufferedReader(new FileReader("example.txt"));
+			String line = br.readLine();
+			while(line != null) {
+			String[] split = line.split(",");
+			nameList.add(split[0]);
+			values.add(split[1]);
+			line = br.readLine();
+		}
 	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-	
+		e.printStackTrace();
+	}	
+	System.out.println(nameList);
+	System.out.println(values);
     }
 }
