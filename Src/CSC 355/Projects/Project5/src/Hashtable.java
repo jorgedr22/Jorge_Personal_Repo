@@ -31,32 +31,34 @@ public class Hashtable<K, V> {
     }
 
     public void put(K key, V val) {
-    int hash = hash(key);
-    int index = findIndex(hash, key);
-
-    if (index != -1) {
-        table[index].setValue(val); // Update value if key exists
-        return;
-    }
-
-    if ((double)(size + 1) / table.length > ALPHA_HIGH) {
-        resize(getNextNum(2 * table.length));
-        hash = hash(key); // Recalculate hash after resizing
-    }
-
-    int probe = 1;
-    index = (hash + probe) % table.length;
-
-    while (table[index] != null && !table[index].isDeleted()) {
-        probe++;
+        int hash = hash(key);
+        System.out.println("Hash for key " + key + ": " + hash);
+        int index = findIndex(hash, key);
+    
+        if (index != -1) {
+            table[index].setValue(val); // Update value if key exists
+            return;
+        }
+    
+        if ((double)(size + 1) / table.length > ALPHA_HIGH) {
+            resize(getNextNum(2 * table.length));
+            hash = hash(key); // Recalculate hash after resizing
+            System.out.println("Resized table. New hash for key " + key + ": " + hash);
+        }
+    
+        int probe = 1;
         index = (hash + probe) % table.length;
+    
+        while (table[index] != null && !table[index].isDeleted()) {
+            probe++;
+            index = (hash + probe) % table.length;
+        }
+    
+        table[index] = new Pair<>(key, val);
+        size++;
+        System.out.println("Inserted key " + key + " at index " + index);
     }
-
-    table[index] = new Pair<>(key, val);
-    size++;
-}
-
-
+    
     public V delete(K key) {
         int hash = hash(key);
         int index = findIndex(hash, key);

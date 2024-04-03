@@ -23,7 +23,7 @@ public class HashtableTest {
 	setup();
 	double score = 0.0;
 	score += test1();	
-	//score += test2();
+	score += test2();
 	System.out.println("Total Part 1 Expected Score: " + score);
     }
 
@@ -147,59 +147,59 @@ public class HashtableTest {
 	return score;
     }
 
-    // private static double test2() {
-	// System.out.println("***Begin Test 2***");
-	// double score = 0.0;
-	// int index = 0;
-	// table = new Hashtable<String, String>(5);
-	// //add 2 elements
-	// while(index < 2) {
-	//     String name = nameList.get(index);
-	//     String[] split = name.split(" ");
-	//     table.put(split[1], name);
-	//     index++;
-	// }
-	// Pair[] array = table.getTable();
-	// int arrNum = 1;
-	// score += checkArray(array, arrNum);
+    private static double test2() {
+	System.out.println("***Begin Test 2***");
+	double score = 0.0;
+	int index = 0;
+	table = new Hashtable<String, String>(5);
+	//add 2 elements
+	while(index < 2) {
+	    String name = nameList.get(index);
+	    String[] split = name.split(" ");
+	    table.put(split[1], name);
+	    index++;
+	}
+	Pair[] array = table.getTable();
+	int arrNum = 1;
+	score += checkArray(array, arrNum);
 
-	// //add 3 more elements
-	// while(index < 5) {
-	//     String name = nameList.get(index);
-	//     String[] split = name.split(" ");
-	//     table.put(split[1], name);
-	//     index++;
-	// }
-	// array = table.getTable();
-	// arrNum++;
-	// score += checkArray(array, arrNum);
+	//add 3 more elements
+	while(index < 5) {
+	    String name = nameList.get(index);
+	    String[] split = name.split(" ");
+	    table.put(split[1], name);
+	    index++;
+	}
+	array = table.getTable();
+	arrNum++;
+	score += checkArray(array, arrNum);
 
-	// //add 6 more elements
-	// while(index < 11) {
-	//     String name = nameList.get(index);
-	//     String[] split = name.split(" ");
-	//     table.put(split[1], name);
-	//     index++;
-	// }
-	// array = table.getTable();
-	// arrNum++;
-	// score += checkArray(array, arrNum);
+	//add 6 more elements
+	while(index < 11) {
+	    String name = nameList.get(index);
+	    String[] split = name.split(" ");
+	    table.put(split[1], name);
+	    index++;
+	}
+	array = table.getTable();
+	arrNum++;
+	score += checkArray(array, arrNum);
 
-	// //delete 9 elements
-	// index = 0;
-	// while(index < 9) {
-	//     String name = nameList.get(index);
-	//     String[] split = name.split(" ");
-	//     table.delete(split[1]);
-	//     index++;
-	// }
-	// array = table.getTable();
-	// arrNum++;
-	// score += checkArray(array, arrNum);
+	//delete 9 elements
+	index = 0;
+	while(index < 9) {
+	    String name = nameList.get(index);
+	    String[] split = name.split(" ");
+	    table.delete(split[1]);
+	    index++;
+	}
+	array = table.getTable();
+	arrNum++;
+	score += checkArray(array, arrNum);
 
-	// System.out.println("Test 2 Expected Score: " + score + "\n");
-	// return score;
-    // }
+	System.out.println("Test 2 Expected Score: " + score + "\n");
+	return score;
+    }
 
     private static double checkArray(Pair[] act, int num) {
 	Pair[] exp = null;
